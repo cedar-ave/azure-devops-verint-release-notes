@@ -1,0 +1,79 @@
+h1 {
+    font-weight: 800;
+    padding-top: 50px;
+    font-size: 24px;
+}
+
+h2 {
+    font-weight: 600;
+    padding-top: 24px;
+    font-size: 20px;
+    margin-bottom: -8px;
+    margin-top: -10px;
+}
+
+h3, h4, h5, h6 {
+    font-weight: 600;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    font-size: 16px;
+    margin-bottom: -20px;
+    margin-top: 25px;
+}
+
+blockquote {
+    font-style: normal;
+}
+
+code {
+    color: #a94c9d;
+    font-family: Consolas, Menlo, monospace;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px 7px;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    line-height: 1.4;
+}
+
+table {
+    /*width: 100%;*/
+    table-layout: table;
+}
+
+th {
+    color: #006d9a;
+    font-weight: 600;
+    padding-top: 16px;
+}
+
+td {
+    padding-top: 8px;
+    text-align: left;
+}
+
+th, td {
+    padding-right: 16px;
+    padding-left: 0px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c0c5cc;
+    text-align: left !important;
+}
+
+.content-fragment .content>.content ul, .popup-list .content>.content ul {
+    margin-top: 25px;
+}
+
+ul > li > ul {
+    margin-top: 28px;
+    margin-bottom: 2px;
+}
+
+ul > li:first-child {
+    padding-top: 17px;
+    margin-top: -28px;
+}
+
+ul li ul li:first-child {
+    padding-top: 0px;
+}
