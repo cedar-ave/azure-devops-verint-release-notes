@@ -37,7 +37,7 @@ Notes on the Verint page are published in the following format:
 
 ```
 Page name
-  Subtitle
+Subtitle
 
 Contents
 - Date (link to notes for this date below)
@@ -128,23 +128,23 @@ etc.
 
 | Step | What to do | Details below |
 |-|-|-|
-| Step 1 | Determine how you will correspond Azure DevOps work item fields to components of release notes (default and/or custom). | [Azure DevOps work items](#azure-devops-work-items) |
-| Step 2 | Create a template in Bravo Notes using those fields. Create labels using those fields. The template must include `**Contents**` and `**Scroll up slightly after the jump**` or the scripts must be adjusted. | [Bravo Notes](#bravo-notes) |
-| Step 3 | Create one or more `YYYY` directories in root. The `YYYY` directory must contain a subdirectory and files or the script throws errors. I.e., don't make a new YYYY directory until there are files to put in it. | [Prerequisites](#prerequisites) |
-| Step 4 | Customize [style.css](style.css) | [Custom styles](#custom-css) |
+| 1 | Determine how you will correspond Azure DevOps work item fields to components of release notes (default and/or custom). | [Azure DevOps work items](#azure-devops-work-items) |
+| 2 | Create a template in Bravo Notes using those fields. Create labels using those fields. The template must include `**Contents**` and `**Scroll up slightly after the jump**` or the scripts must be adjusted. | [Bravo Notes](#bravo-notes) |
+| 3 | Create one or more `YYYY` directories in root. The `YYYY` directory must contain a subdirectory and files or the script throws errors. I.e., don't make a new YYYY directory until there are files to put in it. | [Prerequisites](#prerequisites) |
+| 4 | Customize [style.css](style.css). | [Custom styles](#custom-css) |
 
 ### Every time
 
 | Step | What to do | Details |
 |-|-|-|
-| Step 1 | Export a file from Bravo Notes (1) as HTML, (2) in the following format: `YYYY-MM-DD.html`, and (3) to the root of the repo. | |
-| Step 2 | Move the file to the root of a `YYYY` directory. | |
-| Step 3 | Run [1_html-to-md.sh](1_html-to-md.sh). This transforms the Markdown to HTML. The exported Markdown file is in `YYYY`. |  |
-| Step 4 | If desired, run [image.sh](image.sh) to upload image(s) to Verint and output(s) the URL so they can be inserted in the published page on Verint | [Upload images](#upload-images) |
-| Step 5 | Create, review, and complete a pull request, if desired. | |
-| Step 6 | If titles of notes changed, run [only-toc-on-existing-md.sh](only-toc-on-existing-md.sh) after updating the date variables. This updates the table of contents for a release date file if the file was changed after the original table of contents is generated. | |
-| Step 7 | Run [2_assemble-markdown.sh](2_assemble-markdown.sh). This assembles all release notes files in reverse chronological order and adds a master table of contents. | |
-| Step 8 | Run [3_md-to-html.sh](3_md-to-html.sh) after adding `$yearName` and `pageId` variables beginning in line 25. This transforms the exported Markdown to HTML, applies [CSS styles](style.css) supported by Verint, and posts it on Verint. | |
+| 1 | Export a file from Bravo Notes (1) as HTML, (2) in the following format: `YYYY-MM-DD.html`, and (3) to the root of the repo. | |
+| 2 | Move the file to the root of a `YYYY` directory. | |
+| 3 | Run [1_html-to-md.sh](1_html-to-md.sh). This transforms the Markdown to HTML. The exported Markdown file is in `YYYY`. |  |
+| 4 | If desired, run [image.sh](image.sh) to upload image(s) to Verint and output(s) the URL so they can be inserted in the published page on Verint. | [Upload images](#upload-images) |
+| 5 | Create, review, and complete a pull request, if desired. | |
+| 6 | If titles of notes changed, run [only-toc-on-existing-md.sh](only-toc-on-existing-md.sh) after updating the date variables. This updates the table of contents for a release date file if the file was changed after the original table of contents is generated. | |
+| 7 | Run [2_assemble-markdown.sh](2_assemble-markdown.sh). This assembles all release notes files in reverse chronological order and adds a master table of contents. | |
+| 8 | Run [3_md-to-html.sh](3_md-to-html.sh) after adding `$yearName` and `pageId` variables beginning in line 25. This transforms the exported Markdown to HTML, applies [CSS styles](style.css) supported by Verint, and posts it on Verint. | |
 
 ## Process overview
 
@@ -265,21 +265,21 @@ Note: Correspond a case change to `Fixed bugs` or other fixed elements with code
 
 **New features**
 
-![](examples/label-new.png)
+![](bravo-notes-examples/label-new.png)
 
 **Fixed bugs**
 
-![](examples/label-fixed.png)
+![](bravo-notes-examples/label-fixed.png)
 
 #### How to find Azure DevOps field names to use in a Bravo Notes template
 
 Directly: `https://dev.azure.com/<organization>/<project>/_apis/wit/fields?api-version=5.1`
 
-In cURL: curl -u EMAIL:ADO_PAT --request GET "https://dev.azure.com/<organization>/<project>/_apis/wit/wiql/<id>?api-version=5.1"`
+In cURL: `curl -u EMAIL:ADO_PAT --request GET "https://dev.azure.com/<organization>/<project>/_apis/wit/wiql/<id>?api-version=5.1"`
 
 In an application like Postman, send a basic authorization `GET` request to `https://dev.azure.com/<organization>/<project>/_apis/wit/fields?api-version=5.1`.
 
-- Username: Email
+- Username: Email (depending on organization)
 - Password: Azure DevOps personal access token
 
 ## Reference
