@@ -265,11 +265,11 @@ Note: Correspond a case change to `Fixed bugs` or other fixed elements with code
 
 **New features**
 
-![](bravo-notes-examples/label-new.png)
+![](https://github.com/cedar-ave/azure-devops-verint-release-notes/blob/main/bravo-notes-examples/label-new.png)
 
 **Fixed bugs**
 
-![](bravo-notes-examples/label-fixed.png)
+![](https://github.com/cedar-ave/azure-devops-verint-release-notes/blob/main/bravo-notes-examples/label-fixed.png)
 
 #### How to find Azure DevOps field names to use in a Bravo Notes template
 
